@@ -5,10 +5,7 @@ export const FormatDate = 'dd/MM/yyyy'
 
 const evocdoni = import.meta.env.VOCDONI_ENVIRONMENT || 'stg'
 
-let explorer = 'https://explorer.vote'
-if (['stg', 'dev'].includes(evocdoni)) {
-  explorer = `https://${evocdoni}.explorer.vote`
-}
+let explorer = 'http://localhost:8082'
 
 export const ExplorerBaseURL = explorer
 export const VocdoniEnvironment = evocdoni
