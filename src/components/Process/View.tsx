@@ -25,7 +25,7 @@ import { ElectionStatus, IQuestion } from '@vocdoni/sdk'
 import { useEffect, useState } from 'react'
 import { FieldValues } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
-import ProcessAside from './Aside'
+import ProcessAside, { ProcessAsideFooterMbl } from './Aside'
 import Header from './Header'
 import logoBrand1 from '/assets/erc-logo.png'
 import logoBrand2 from '/assets/logo.svg'
@@ -54,34 +54,50 @@ export const ProcessView = () => {
           <Img src={logoBrand2} maxW='500px' />
         </Flex>
         <Header />
-        <Flex direction={{ base: 'column', xl: 'row' }} gap={{ xl: 10 }} alignItems='start'>
-          <Box flexGrow={0} flexShrink={0} flexBasis={{ base: '100%', xl: '75%' }} w='full'>
-            <Tabs variant='process' index={tabIndex} onChange={handleTabsChange}>
-              <TabList>
-                <Tab>{t('process.questions')}</Tab>
-                {election?.status !== ElectionStatus.CANCELED && <Tab>{t('process.results')}</Tab>}
-              </TabList>
-              <TabPanels>
-                <TabPanel>
-                  <ElectionQuestions
-                    confirmContents={(questions, answers) => (
-                      <ConfirmVoteModal questions={questions} answers={answers} />
-                    )}
-                  />
-                </TabPanel>
-                <TabPanel mb={20}>
-                  <ElectionResults />
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
-          </Box>
-          <Flex
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          alignItems='start'
+          gap={{ md: 10 }}
+          px={{
+            base: 2,
+            sm: 4,
+          }}
+        >
+          <Tabs
+            order={{ base: 2, md: 1 }}
+            variant='process'
+            index={tabIndex}
+            onChange={handleTabsChange}
+            flexGrow={0}
+            flexShrink={0}
+            flexBasis={{ base: '100%', md: '60%', lg2: '70%', xl2: '75%' }}
             w='full'
-            justifyContent='center'
-            position={{ xl: 'sticky' }}
-            top={{ xl: 20 }}
-            mt={{ xl: 10 }}
-            mx={{ base: 'auto', xl: 0 }}
+          >
+            <TabList>
+              <Tab>{t('process.questions')}</Tab>
+              {election?.status !== ElectionStatus.CANCELED && <Tab>{t('process.results')}</Tab>}
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <ElectionQuestions
+                  confirmContents={(questions, answers) => <ConfirmVoteModal questions={questions} answers={answers} />}
+                />
+              </TabPanel>
+              <TabPanel mb={20}>
+                <ElectionResults />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+          <Flex
+            flexGrow={1}
+            flexDirection='column'
+            alignItems={{ base: 'center', md: 'start' }}
+            order={{ base: 1, md: 2 }}
+            gap={2}
+            mx={{ base: 'auto', md: 0 }}
+            position={{ md: 'sticky' }}
+            top={20}
+            mt={10}
           >
             <ProcessAside setQuestionsTab={setQuestionsTab} />
           </Flex>
@@ -96,6 +112,17 @@ export const ProcessView = () => {
           }}
         />
       </Text>
+      <Box
+        position='sticky'
+        bottom={0}
+        left={0}
+        bgColor='process.aside.aside_footer_mbl_border'
+        pt={1}
+        display={{ base: 'block', md: 'none' }}
+      >
+        <ProcessAsideFooterMbl setQuestionsTab={setQuestionsTab} />
+      </Box>
+
       <SuccessVoteModal />
     </>
   )
@@ -173,7 +200,7 @@ const ConfirmVoteModal = ({ questions, answers }: { questions: IQuestion[]; answ
           overflowY='scroll'
           boxShadow='rgba(128, 128, 128, 0.42) 1px 1px 1px 1px'
           px={2}
-          borderRadius='lg'
+          borderRadius='lg2'
         >
           {questions.map((q, i) => (
             <Box>
