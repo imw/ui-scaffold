@@ -23,7 +23,7 @@ const baseStyle = definePartsStyle({
     },
 
     '& > div': {
-      height: '150px',
+      height: '250px',
       bgSize: 'cover',
       borderRadius: 'lg',
     },

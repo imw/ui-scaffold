@@ -49,7 +49,7 @@
     "required": "Aquest camp és obligatori",
     "results": {
       "date_format": "PPpp",
-      "secret_until_the_end": "Secret fins el final. Els resultats seran accessibles quan el procés finalitzi el {{ endDate }}",
+      "secret_until_the_end": "Secret fins el final. Els resultats seran accessibles quan el procés finalitzi.",
       "title": "Resultats per a \"{{ title }}\"",
       "votes": "Vots: {{ votes }} ({{ percent }})"
     },
@@ -97,6 +97,7 @@
     "address": "Copia l'adreça",
     "copied_title": "Copiat!"
   },
+  "copyrights": "Drets d'autor 2023 Vocdoni, Inc. Tots els drets reservats.",
   "error": {
     "go_back": "Torna enrere",
     "invalid_cell_data": "Algunes fileres no contenen adreces correctes: {{rows, list}}",
@@ -366,6 +367,7 @@
       "read_more": "Expandir títol"
     }
   },
+  "privacy_policy": "Política de privadesa",
   "process": {
     "actions": "Accions",
     "census": "Cens",
@@ -381,6 +383,7 @@
       "relative": "{{ date, relative(past: fa %time; future: en %time) }}",
       "starts": "Comença el procés"
     },
+    "erc_footer": "<strong>Esquerra Republicana</strong> utilitza la plataforma de programari lliure Vocdoni basat el tecnología blockchain per gestionar registrar les votacions de manera anònima, segura i transparent. Per a més informació sobre la plataforma podeu consultar el següent enllaç:<customLink>vocdoni.io</customLink>",
     "is_anonymous": {
       "description": "Els vots són encriptats",
       "title": "Anònim"
@@ -390,12 +393,10 @@
     "people_in_census_many": "",
     "people_in_census_other": "{{ count }} votants",
     "questions": "Preguntes",
-    "results": "Resultats",
-    "share_caption": "Acabo d'emetre el meu vot a {{ title }}!!",
-    "share_title": "Comparteix a {{ network }}",
+    "results": "Resultats provisionals",
     "spreadsheet": {
       "confirm": {
-        "description": "Abans de votar, reviseu que tot sigui correcte.",
+        "description": "Confrima la teva tria.",
         "option": "<strong>Opció {{ number }}:</strong> {{ answer }}",
         "question": "<strong>Pregunta {{ number }}:</strong> {{ answer }}"
       }
@@ -412,7 +413,7 @@
     "strategy": "Estratègia",
     "success_modal": {
       "btn": "Finalitzar",
-      "text": "<p>El teu vot ha estat emès i emmagatzemat de forma segura a la cadena de blocs de Vocdoni. Pots comprovar-ho <verify>aquí</verify>.</p><p>La democràcia és important, la pots compartir amb la teva comunitat i amics:</p>",
+      "text": "<p>El teu vot ha estat emès i emmagatzemat de forma segura a la cadena de blocs de Vocdoni. Pots comprovar-ho <verify>aquí</verify>.</p>",
       "title": "Vot emès correctament!"
     },
     "voters": "Votants"
@@ -431,6 +432,7 @@
     "creation_steps_description": "Necessites signar les transaccions per crear el procés de votació a la cadena de blocs de Vocdoni. No tanquis aquesta finestra.",
     "creation_steps_title": "Progrés"
   },
+  "terms_of_use": "Condicions d'ús",
   "uploader": {
     "click_or_drag_and_drop": "<p1>Puja o arrossega i deixa anar aquí la llista de votants</p1><p2>(Formats permesos: CSV, XLSX i ODS)</p2>",
     "drop_here": "Deixa anar aquí"

@@ -25,15 +25,23 @@ const Footer = () => {
           <Text fontWeight='bold'>{t('footer.company').toUpperCase()}</Text>
           <List>
             <ListItem>
-              <Link href='https://vocdoni.io' target='_blank'> {t('footer.homepage')}</Link>
+              <Link href='https://vocdoni.io' target='_blank'>
+                {' '}
+                {t('footer.homepage')}
+              </Link>
             </ListItem>
 
             <ListItem>
-              <Link href='https://vocdoni.io/about' target='_blank'> {t('footer.about')}</Link>
+              <Link href='https://vocdoni.io/about' target='_blank'>
+                {' '}
+                {t('footer.about')}
+              </Link>
             </ListItem>
 
             <ListItem>
-              <Link href='https://blog.aragon.org/vocdoni/' target='_blank'>{t('footer.blog')}</Link>
+              <Link href='https://blog.aragon.org/vocdoni/' target='_blank'>
+                {t('footer.blog')}
+              </Link>
             </ListItem>
           </List>
         </Box>
@@ -74,13 +82,19 @@ const Footer = () => {
           <Text fontWeight='bold'>{t('footer.resources').toUpperCase()}</Text>
           <List>
             <ListItem>
-              <Link href='https://developer.vocdoni.io/get-started/intro' target='_blank'>{t('footer.tutorials')}</Link>
+              <Link href='https://developer.vocdoni.io/get-started/intro' target='_blank'>
+                {t('footer.tutorials')}
+              </Link>
             </ListItem>
             <ListItem>
-              <Link href='https://github.com/vocdoni' target='_blank'>{t('footer.repos')}</Link>
+              <Link href='https://github.com/vocdoni' target='_blank'>
+                {t('footer.repos')}
+              </Link>
             </ListItem>
             <ListItem>
-              <Link href='https://chat.vocdoni.io/' target='_blank'>{t('footer.discord')}</Link>
+              <Link href='https://chat.vocdoni.io/' target='_blank'>
+                {t('footer.discord')}
+              </Link>
             </ListItem>
           </List>
         </Box>
@@ -107,11 +121,17 @@ const Footer = () => {
         gap={4}
       >
         <Code bg='bg_main' textAlign='center'>
-          Copyrights 2023 Vocdoni, Inc. All rights reserved
+          {t('copyrights')}
         </Code>
         <Code bg='bg_main'>
-          <Link href='https://aragon.org/terms-and-conditions' target='_blank'>Terms of use</Link> &  
-          <Link href='https://aragon.org/privacy-policy' target='_blank'> Privacy Policy</Link>
+          <Link href='https://aragon.org/terms-and-conditions' target='_blank'>
+            {t('terms_of_use')}
+          </Link>{' '}
+          &
+          <Link href='https://aragon.org/privacy-policy' target='_blank'>
+            {' '}
+            {t('privacy_policy')}
+          </Link>
         </Code>
 
         <Flex justifyContent='center' alignItems='center' gap={6} mb={4}>

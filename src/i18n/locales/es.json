@@ -49,7 +49,7 @@
     "required": "Este campo es obligatorio",
     "results": {
       "date_format": "d 'de' MMMM 'de' y 'a' 'las' H:mm",
-      "secret_until_the_end": "Secreto hasta el final. Los resultados estarán disponibles cuando el proceso termine el {{ endDate }}",
+      "secret_until_the_end": "Secreto hasta el final. Los resultados estarán disponibles cuando el proceso termine.",
       "title": "Resultados para \"{{ title }}\"",
       "votes": "Votos: {{ votes }} ({{ percent }})"
     },
@@ -97,6 +97,7 @@
     "address": "Copiar dirección",
     "copied_title": "¡Copiado!"
   },
+  "copyrights": "Derechos de autor 2023 Vocdoni, Inc. Todos los derechos reservados.",
   "error": {
     "go_back": "Volver atrás",
     "invalid_cell_data": "Algunas filas no contienen direcciones correctas: {{rows, list}}",
@@ -366,6 +367,7 @@
       "read_more": "Expandir título"
     }
   },
+  "privacy_policy": "Política de privacidad",
   "process": {
     "actions": "Acciones",
     "census": "Censo",
@@ -381,6 +383,7 @@
       "relative": "{{ date, relative(past: hace %time; future: en %time) }}",
       "starts": "Empieza"
     },
+    "erc_footer": "<strong>Esquerra Republicana</strong> utiliza la plataforma de software libre Vocdoni, basada en la tecnología blockchain, para gestionar y registrar las votaciones de manera anónima, segura y transparente. Para obtener más información sobre la plataforma, puedes consultar el siguiente enlace: <customLink>vocdoni.io</customLink>.",
     "is_anonymous": {
       "description": "Identidad 100% anonimizada",
       "title": "Anónimo"
@@ -390,12 +393,10 @@
     "people_in_census_many": "",
     "people_in_census_other": "{{ count }} votantes",
     "questions": "Preguntas",
-    "results": "Resultados",
-    "share_caption": "Acabo de emitir mi voto para {{ title }}!!",
-    "share_title": "Compartir en {{ network }}",
+    "results": "Resultados provisionales",
     "spreadsheet": {
       "confirm": {
-        "description": "Antes de emitir tu voto, revisa que todo esté correcto.",
+        "description": "Confirma tu elección.",
         "option": "<strong>Opción {{ number }}:</strong> {{ answer }}",
         "question": "<strong>Pregunta {{ number }}:</strong> {{ answer }}"
       }
@@ -412,7 +413,7 @@
     "strategy": "Estrategia",
     "success_modal": {
       "btn": "Finalizar",
-      "text": "<p>Tu voto ha sido emitido y almacenado de forma segura en la cadena de bloques de Vocdoni. Puedes comprobarlo <verify>aquí</verify>.</p><p>La democracia es importante, puedes compartirla con tu comunidad y amigos:</p>",
+      "text": "<p>Tu voto ha sido emitido y almacenado de forma segura en la cadena de bloques de Vocdoni. Puedes comprobarlo <verify>aquí</verify>.</p>",
       "title": "Voto emitido correctamente!"
     },
     "voters": "Votantes"
@@ -431,6 +432,7 @@
     "creation_steps_description": "Necesitas firmar las transacciones para crear el proceso de votación en la cadena de bloques de Vocdoni. No cierres esta ventana.",
     "creation_steps_title": "Progreso"
   },
+  "terms_of_use": "Términos de uso",
   "uploader": {
     "click_or_drag_and_drop": "<p1>Sube o arrastra y suelta aqui la lista de votantes</p1><p2>(Formap permitidos: CSV, XLSX y ODS)</p2>",
     "drop_here": "Suelta aqui"

@@ -1,5 +1,5 @@
 import { WarningIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, Icon, Text } from '@chakra-ui/react'
+import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import { useReadMoreMarkdown } from '@components/Layout/use-read-more'
 import {
   ElectionActions,
@@ -7,14 +7,10 @@ import {
   ElectionSchedule,
   ElectionStatusBadge,
   ElectionTitle,
-  OrganizationName,
 } from '@vocdoni/chakra-components'
 import { useClient, useElection } from '@vocdoni/react-providers'
 import { ElectionStatus } from '@vocdoni/sdk'
 import { useTranslation } from 'react-i18next'
-import { FaRegArrowAltCircleLeft } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { CreatedBy } from './CreatedBy'
 import { ProcessDate } from './Date'
 
 const ProcessHeader = () => {
@@ -27,12 +23,7 @@ const ProcessHeader = () => {
 
   return (
     <Box mb={4}>
-      <Link to={`/organization/0x${election?.organizationId}`}>
-        <Button leftIcon={<FaRegArrowAltCircleLeft />} mb={5} maxW={40}>
-          <OrganizationName as='span' overflow='hidden' fontSize='sm' isTruncated />
-        </Button>
-      </Link>
-      <Flex direction={{ base: 'column', xl: 'row' }} justifyContent='space-between' mb={7} gap={{ xl: 10 }}>
+      <Flex direction={{ base: 'column', xl: 'row' }} mb={7} gap={{ xl: 10 }}>
         <Box flexGrow={0} flexShrink={0} flexBasis={{ base: '100%', xl: '75%' }}>
           <ElectionTitle fontSize='xl4' textAlign='left' mb={5} />
           <Flex
@@ -83,27 +74,6 @@ const ProcessHeader = () => {
             </Box>
           )}
 
-          <Box width='100%'>
-            <Text color='process.info_title' fontWeight='bold' mb={1}>
-              {t('process.created_by')}
-            </Text>
-            <CreatedBy
-              sx={{
-                '& p': {
-                  minW: 0,
-                  display: 'flex',
-                  justifyContent: 'start',
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                },
-                '& p strong': {
-                  maxW: { base: '100%', xl: '250px' },
-                  isTruncated: true,
-                  mr: 1,
-                },
-              }}
-            />
-          </Box>
           {election?.status === ElectionStatus.PAUSED && election?.organizationId !== account?.address && (
             <Flex
               color='process.paused'

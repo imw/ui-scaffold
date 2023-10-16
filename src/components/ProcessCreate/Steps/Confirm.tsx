@@ -6,6 +6,7 @@ import {
   Flex,
   FormControl,
   FormErrorMessage,
+  Img,
   Link,
   Modal,
   ModalBody,
@@ -248,7 +249,9 @@ export const Confirm = () => {
           <ModalContent>
             <ModalHeader>
               <Text>{t('form.process_create.creating_process')}</Text>
-              <Box bgImage={imageHeader} />
+              <Flex justifyContent='center' bgColor='#FFE94F' maxH='150px'>
+                <Img src={imageHeader} />
+              </Flex>
             </ModalHeader>
             {error && <ModalCloseButton />}
             <ModalBody>

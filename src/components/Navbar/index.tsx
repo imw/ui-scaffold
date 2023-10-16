@@ -6,7 +6,7 @@ import { useClient } from '@vocdoni/react-providers'
 import { useTranslation } from 'react-i18next'
 import { FaGlobeAmericas } from 'react-icons/fa'
 import { MdHowToVote } from 'react-icons/md'
-import { Link as ReactRouterLink } from 'react-router-dom'
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom'
 import { useAccount } from 'wagmi'
 import LanguagesList from './LanguagesList'
 import MenuDropdown from './Menu'
@@ -16,6 +16,7 @@ const Navbar = () => {
   const { t } = useTranslation()
   const { account } = useClient()
   const { openConnectModal } = useConnectModal()
+  const location = useLocation()
 
   return (
     <>
@@ -62,17 +63,19 @@ const Navbar = () => {
 
         {!isConnected && (
           <>
-            <ListItem>
-              <Button
-                variant='rounded'
-                color='primary.main'
-                onClick={() => {
-                  if (openConnectModal) openConnectModal()
-                }}
-              >
-                {t('menu.login').toString()}
-              </Button>
-            </ListItem>
+            {!location.pathname.includes('processes') && (
+              <ListItem>
+                <Button
+                  variant='rounded'
+                  color='primary.main'
+                  onClick={() => {
+                    if (openConnectModal) openConnectModal()
+                  }}
+                >
+                  {t('menu.login').toString()}
+                </Button>
+              </ListItem>
+            )}
 
             <ListItem>
               <Menu>

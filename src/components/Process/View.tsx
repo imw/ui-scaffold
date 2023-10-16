@@ -2,9 +2,8 @@ import {
   Box,
   Button,
   Flex,
-  Icon,
+  Img,
   Link,
-  ListItem,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -18,7 +17,6 @@ import {
   TabPanels,
   Tabs,
   Text,
-  UnorderedList,
   useDisclosure,
 } from '@chakra-ui/react'
 import { ElectionQuestions, ElectionResults, environment } from '@vocdoni/chakra-components'
@@ -27,10 +25,10 @@ import { ElectionStatus, IQuestion } from '@vocdoni/sdk'
 import { useEffect, useState } from 'react'
 import { FieldValues } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
-import { FaFacebook, FaReddit, FaTelegram, FaTwitter } from 'react-icons/fa'
 import ProcessAside from './Aside'
 import Header from './Header'
-import confirmImg from '/assets/spreadsheet-confirm-modal.png'
+import logoBrand1 from '/assets/erc-logo.png'
+import logoBrand2 from '/assets/logo.svg'
 import successImg from '/assets/success.png'
 
 export const ProcessView = () => {
@@ -52,32 +50,31 @@ export const ProcessView = () => {
   return (
     <>
       <Box>
+        <Flex justifyContent='center' mb={10}>
+          <Img src={logoBrand2} maxW='500px' />
+        </Flex>
         <Header />
         <Flex direction={{ base: 'column', xl: 'row' }} gap={{ xl: 10 }} alignItems='start'>
-          <Tabs
-            variant='process'
-            index={tabIndex}
-            onChange={handleTabsChange}
-            flexGrow={0}
-            flexShrink={0}
-            flexBasis={{ base: '100%', xl: '75%' }}
-            w='full'
-          >
-            <TabList>
-              <Tab>{t('process.questions')}</Tab>
-              {election?.status !== ElectionStatus.CANCELED && <Tab>{t('process.results')}</Tab>}
-            </TabList>
-            <TabPanels>
-              <TabPanel>
-                <ElectionQuestions
-                  confirmContents={(questions, answers) => <ConfirmVoteModal questions={questions} answers={answers} />}
-                />
-              </TabPanel>
-              <TabPanel mb={20}>
-                <ElectionResults />
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
+          <Box flexGrow={0} flexShrink={0} flexBasis={{ base: '100%', xl: '75%' }} w='full'>
+            <Tabs variant='process' index={tabIndex} onChange={handleTabsChange}>
+              <TabList>
+                <Tab>{t('process.questions')}</Tab>
+                {election?.status !== ElectionStatus.CANCELED && <Tab>{t('process.results')}</Tab>}
+              </TabList>
+              <TabPanels>
+                <TabPanel>
+                  <ElectionQuestions
+                    confirmContents={(questions, answers) => (
+                      <ConfirmVoteModal questions={questions} answers={answers} />
+                    )}
+                  />
+                </TabPanel>
+                <TabPanel mb={20}>
+                  <ElectionResults />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
           <Flex
             w='full'
             justifyContent='center'
@@ -90,6 +87,15 @@ export const ProcessView = () => {
           </Flex>
         </Flex>
       </Box>
+      <Text display='inline-block' px={{ base: 10, xl: 32 }} mt='70px' fontSize='lg'>
+        <Trans
+          i18nKey='process.erc_footer'
+          components={{
+            strong: <Text as='span' fontWeight='bold' />,
+            customLink: <Link variant='primary' href='https://vocdoni.io/' target='_blank' ml={1} />,
+          }}
+        />
+      </Text>
       <SuccessVoteModal />
     </>
   )
@@ -117,14 +123,6 @@ const SuccessVoteModal = () => {
   if (!election || !voted) return null
 
   const verify = environment.verifyVote(env, voted)
-  const url = encodeURIComponent(document.location.href)
-  const caption = t('process.share_caption', { title: election?.title.default })
-  const linked = encodeURIComponent(`${caption} — ${document.location.href}`)
-
-  const twitter = `https://twitter.com/intent/tweet?text=${linked}`
-  const facebook = `https://www.facebook.com/sharer/sharer.php?u=${url}`
-  const telegram = `https://t.me/share/url?url=${url}&text=${caption}`
-  const reddit = `https://reddit.com/submit?url=${url}&title=${caption}`
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -143,52 +141,6 @@ const SuccessVoteModal = () => {
               p: <Text mb={2} />,
             }}
           />
-          <UnorderedList listStyleType='none' display='flex' justifyContent='center' gap={6} mt={6} mb={2} ml={0}>
-            <ListItem>
-              <Link
-                href={twitter}
-                target='_blank'
-                title={t('process.share_title', { network: 'twitter' })}
-                rel='noopener noreferrer'
-                variant='button-ghost'
-              >
-                <Icon as={FaTwitter} w={6} h={6} cursor='pointer' />
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href={facebook}
-                target='_blank'
-                title={t('process.share_title', { network: 'facebook' })}
-                rel='noopener noreferrer'
-                variant='button-ghost'
-              >
-                <Icon as={FaFacebook} w={6} h={6} cursor='pointer' />
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href={telegram}
-                target='_blank'
-                title={t('process.share_title', { network: 'telegram' })}
-                rel='noopener noreferrer'
-                variant='button-ghost'
-              >
-                <Icon as={FaTelegram} w={6} h={6} cursor='pointer' />
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href={reddit}
-                target='_blank'
-                title={t('process.share_title', { network: 'reddit' })}
-                rel='noopener noreferrer'
-                variant='button-ghost'
-              >
-                <Icon as={FaReddit} w={6} h={6} cursor='pointer' />
-              </Link>
-            </ListItem>
-          </UnorderedList>
         </ModalBody>
 
         <ModalFooter mt={4}>
@@ -207,7 +159,9 @@ const ConfirmVoteModal = ({ questions, answers }: { questions: IQuestion[]; answ
   return (
     <>
       <ModalHeader>
-        <Box bgImage={`url(${confirmImg})`} />
+        <Flex justifyContent='center' bgColor='#FFE94F' maxH='150px'>
+          <Img src={logoBrand1} />
+        </Flex>
       </ModalHeader>
       <ModalBody display='flex' flexDirection='column' gap={5} p={0} mb={2}>
         <Text textAlign='center' color='modal_description'>
