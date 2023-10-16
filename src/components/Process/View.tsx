@@ -27,9 +27,8 @@ import { FieldValues } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
 import ProcessAside, { ProcessAsideFooterMbl } from './Aside'
 import Header from './Header'
-import logoBrand1 from '/assets/erc-logo.png'
-import logoBrand2 from '/assets/logo.svg'
-import successImg from '/assets/success.png'
+import logoBrand2 from '/assets/erc-logo.png'
+import logoBrand from '/assets/logo.svg'
 
 export const ProcessView = () => {
   const { t } = useTranslation()
@@ -50,8 +49,8 @@ export const ProcessView = () => {
   return (
     <>
       <Box>
-        <Flex justifyContent='center' mb={10}>
-          <Img src={logoBrand2} maxW={{ base: '300px', md: '400px', lg: '500px' }} />
+        <Flex justifyContent='center' mb={{ base: 10, md: 20 }} mt={{ base: 6, md: 10 }}>
+          <Img src={logoBrand} maxW={{ base: '300px', md: '400px', lg: '500px' }} />
         </Flex>
         <Header />
         <Flex
@@ -103,7 +102,7 @@ export const ProcessView = () => {
           </Flex>
         </Flex>
       </Box>
-      <Text display='inline-block' px={{ base: 10, xl: 32 }} mt='70px' fontSize='lg'>
+      <Text display='inline-block' px={{ base: 10, xl: 32 }} mt='100px' textAlign='center' fontSize='lg'>
         <Trans
           i18nKey='process.erc_footer'
           components={{
@@ -157,7 +156,9 @@ const SuccessVoteModal = () => {
       <ModalContent>
         <ModalHeader>
           <Text>{t('process.success_modal.title')}</Text>
-          <Box bgImage={successImg} minH='300px' />
+          <Flex justifyContent='center' bgColor='#FFE94F' maxH='150px'>
+            <Img src={logoBrand2} />
+          </Flex>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
@@ -187,7 +188,7 @@ const ConfirmVoteModal = ({ questions, answers }: { questions: IQuestion[]; answ
     <>
       <ModalHeader>
         <Flex justifyContent='center' bgColor='#FFE94F' maxH='150px'>
-          <Img src={logoBrand1} />
+          <Img src={logoBrand2} />
         </Flex>
       </ModalHeader>
       <ModalBody display='flex' flexDirection='column' gap={5} p={0} mb={2}>

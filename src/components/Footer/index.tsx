@@ -66,7 +66,7 @@ const Footer = () => {
             </ListItem>
 
             <ListItem>
-              <Link href='https://vocdoni.app/' target='_blank'>
+              <Link href='https://app.vocdoni.io' target='_blank'>
                 {t('footer.vocdoni_app')}
               </Link>
             </ListItem>
