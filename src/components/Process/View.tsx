@@ -103,15 +103,7 @@ export const ProcessView = () => {
           </Flex>
         </Flex>
       </Box>
-      <Text display='inline-block' px={{ base: 10, xl: 32 }} mt='100px' textAlign='center' fontSize='lg'>
-        <Trans
-          i18nKey='process.erc_footer'
-          components={{
-            strong: <Text as='span' fontWeight='bold' />,
-            customLink: <Link variant='primary' href='https://vocdoni.io/' target='_blank' ml={1} />,
-          }}
-        />
-      </Text>
+
       <Box
         position='sticky'
         bottom={0}
@@ -122,7 +114,21 @@ export const ProcessView = () => {
       >
         <ProcessAsideFooterMbl setQuestionsTab={setQuestionsTab} />
       </Box>
-
+      <Text
+        display='inline-block'
+        px={{ base: 10, xl: 32 }}
+        mt={{ base: '50px', md: '100px' }}
+        textAlign='center'
+        fontSize='lg'
+      >
+        <Trans
+          i18nKey='process.erc_footer'
+          components={{
+            strong: <Text as='span' fontWeight='bold' />,
+            customLink: <Link variant='primary' href='https://vocdoni.io/' target='_blank' ml={1} />,
+          }}
+        />
+      </Text>
       <SuccessVoteModal />
     </>
   )
