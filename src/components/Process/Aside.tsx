@@ -33,7 +33,6 @@ const ProcessAside = ({ setQuestionsTab }: { setQuestionsTab: () => void }) => {
         gap={4}
         mt={{ md: 7 }}
         mb={{ base: 7, md: 0 }}
-        minW={{ base: '370px', md: '0' }}
         color='process.aside.color'
         background='process.aside.bg'
         borderRadius='lg'
@@ -138,7 +137,16 @@ const ProcessAside = ({ setQuestionsTab }: { setQuestionsTab: () => void }) => {
               </Link>
             )}
             {connected && (
-              <Box display={{ base: 'inline-block', md: 'none' }} alignSelf='center'>
+              <Box
+                display={{ base: 'inline-block', md: 'none' }}
+                alignSelf='center'
+                sx={{
+                  '& button': {
+                    color: 'process.spreadsheet.disconnect_color_mbl',
+                    bgColor: 'transparent',
+                  },
+                }}
+              >
                 <SpreadsheetAccess />
               </Box>
             )}
@@ -146,7 +154,16 @@ const ProcessAside = ({ setQuestionsTab }: { setQuestionsTab: () => void }) => {
         )}
       </Flex>
       {connected && (
-        <Box display={{ base: 'none', md: 'inline-block' }} alignSelf='center'>
+        <Box
+          display={{ base: 'none', md: 'block' }}
+          alignSelf='center'
+          sx={{
+            '& button': {
+              color: 'process.spreadsheet.disconnect_color_desktop',
+              bgColor: 'transparent',
+            },
+          }}
+        >
           <SpreadsheetAccess />
         </Box>
       )}
