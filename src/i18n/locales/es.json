@@ -38,7 +38,7 @@
     },
     "confirm": {
       "cancel": "Cancelar",
-      "confirm": "Confirmar Voto",
+      "confirm": "Emite tu voto",
       "title": "Confirmar"
     },
     "empty": "Aparentemente este proceso no tiene preguntas",
@@ -49,7 +49,7 @@
     "required": "Este campo es obligatorio",
     "results": {
       "date_format": "d 'de' MMMM 'de' y 'a' 'las' H:mm",
-      "secret_until_the_end": "Secreto hasta el final. Los resultados estarán disponibles cuando el proceso termine.",
+      "secret_until_the_end": "Los resultados provisionales estarán accesibles cuando el proceso finalice.",
       "title": "Resultados para \"{{ title }}\"",
       "votes": "Votos: {{ votes }} ({{ percent }})"
     },
@@ -383,7 +383,7 @@
       "relative": "{{ date, relative(past: hace %time; future: en %time) }}",
       "starts": "Empieza"
     },
-    "erc_footer": "<strong>Esquerra Republicana</strong> utiliza la plataforma de software libre Vocdoni, basada en la tecnología blockchain, para gestionar y registrar las votaciones de manera anónima, segura y transparente. Para obtener más información sobre la plataforma, puedes consultar el siguiente enlace: <customLink>vocdoni.io</customLink>.",
+    "erc_footer": "<strong>Esquerra Republicana</strong> utiliza la plataforma de software libre Vocdoni basada en tecnología blockchain para gestionar y registrar las votaciones de manera anónima, segura y transparente. Para obtener más información sobre la plataforma, puedes consultar el siguiente enlace: <customLink>vocdoni.io</customLink>.",
     "is_anonymous": {
       "description": "Identidad 100% anonimizada",
       "title": "Anónimo"
@@ -396,7 +396,7 @@
     "results": "Resultados provisionales",
     "spreadsheet": {
       "confirm": {
-        "description": "Confirma tu elección.",
+        "description": "Esta es tu selección. Si deseas modificarla, puedes cerrar este mensaje y seleccionarla de nuevo.",
         "option": "<strong>Opción {{ number }}:</strong> {{ answer }}",
         "question": "<strong>Pregunta {{ number }}:</strong> {{ answer }}"
       }

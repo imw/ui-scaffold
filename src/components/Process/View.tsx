@@ -27,8 +27,9 @@ import { FieldValues } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
 import ProcessAside, { ProcessAsideFooterMbl } from './Aside'
 import Header from './Header'
-import logoBrand2 from '/assets/erc-logo.png'
 import logoBrand from '/assets/logo.svg'
+import confirmImg from '/assets/spreadsheet-confirm-modal2.png'
+import successImg from '/assets/success2.png'
 
 export const ProcessView = () => {
   const { t } = useTranslation()
@@ -156,8 +157,8 @@ const SuccessVoteModal = () => {
       <ModalContent>
         <ModalHeader>
           <Text>{t('process.success_modal.title')}</Text>
-          <Flex justifyContent='center' bgColor='#FFE94F' maxH='150px'>
-            <Img src={logoBrand2} />
+          <Flex justifyContent='center' bgColor='#FFE554' maxH='150px'>
+            <Img src={successImg} />
           </Flex>
         </ModalHeader>
         <ModalCloseButton />
@@ -187,8 +188,8 @@ const ConfirmVoteModal = ({ questions, answers }: { questions: IQuestion[]; answ
   return (
     <>
       <ModalHeader>
-        <Flex justifyContent='center' bgColor='#FFE94F' maxH='150px'>
-          <Img src={logoBrand2} />
+        <Flex justifyContent='center' bgColor='#FFE554' maxH='150px'>
+          <Img src={confirmImg} />
         </Flex>
       </ModalHeader>
       <ModalBody display='flex' flexDirection='column' gap={5} p={0} mb={2}>

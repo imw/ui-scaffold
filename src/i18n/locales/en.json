@@ -36,7 +36,7 @@
     },
     "confirm": {
       "cancel": "Cancel",
-      "confirm": "Confirm Vote",
+      "confirm": "Cast your vote",
       "title": "Confirm"
     },
     "empty": "Apparently this process has no questions",
@@ -47,7 +47,7 @@
     "required": "This field is required",
     "results": {
       "date_format": "PPpp",
-      "secret_until_the_end": "Secret until the end. The results will be available when the process ends.",
+      "secret_until_the_end": "Provisional results will be accessible when the process concludes.",
       "title": "Results for \"{{ title }}\"",
       "votes": "Votes: {{ votes }} ({{ percent }})"
     },
@@ -375,7 +375,7 @@
       "relative": "{{ date, relative(past: %time ago; future: in %time) }}",
       "starts": "Starts"
     },
-    "erc_footer": "<strong>Esquerra Republicana</strong> uses the open-source software platform Vocdoni, based on blockchain technology, to manage and record votes anonymously, securely, and transparently. For more information about the platform, you can visit the following link: <customLink>vocdoni.io</customLink>.",
+    "erc_footer": "<strong>Esquerra Republicana</strong> uses the open-source software platform Vocdoni based on blockchain technology to manage and record votes anonymously, securely, and transparently. For more information about the platform, you can refer to the following link: <customLink>vocdoni.io</customLink>.",
     "is_anonymous": {
       "description": "Fully anonymized identity",
       "title": "Anonymous"
@@ -387,7 +387,7 @@
     "results": "Provisional results",
     "spreadsheet": {
       "confirm": {
-        "description": "Confirm your choice.",
+        "description": "This is your selection. If you want to modify it, you can close this message and select it again.",
         "option": "<strong>Option {{ number }}:</strong> {{ answer }}",
         "question": "<strong>Question {{ number }}:</strong> {{ answer }}"
       }
