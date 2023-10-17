@@ -4,7 +4,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { errorToString, useClient } from '@vocdoni/react-providers'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaUsers } from 'react-icons/fa'
 import { useFaucet } from './use-faucet'
 
 export const Claim = () => {
@@ -12,7 +12,7 @@ export const Claim = () => {
 
   const toast = useToast()
   const { t } = useTranslation()
-  const { oAuthSignInURL, faucetReceipt } = useFaucet()
+  const { oAuthSignInURL, oAuthFaucetReceipt, aragonDaoReceipt } = useFaucet()
   const [loading, setLoading] = useState<boolean>(false)
   const [pendingClaim, setPendingClaim] = useState<boolean>(false)
 
@@ -34,11 +34,11 @@ export const Claim = () => {
 
     if (!code || !provider || !recipient) return
 
-    claimTokens(provider, code, recipient)
+    claimOAuthTokens(provider, code, recipient)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pendingClaim])
 
-  const handleSignIn = async (provider: string) => {
+  const handleOAuthSignIn = async (provider: string) => {
     setLoading(true)
     try {
       window.location.href = await oAuthSignInURL(provider, [{ param: 'loadDraft', value: '' }])
@@ -48,8 +48,52 @@ export const Claim = () => {
     setLoading(false)
   }
 
-  const claimTokens = async (provider: string, code: string, recipient: string) => {
+  const claimOAuthTokens = async (provider: string, code: string, recipient: string) => {
     setLoading(true)
+    try {
+      const { amount, faucetPackage } = await oAuthFaucetReceipt(provider, code, recipient)
+      await claimFaucetTokens(amount, faucetPackage)
+    } catch (error) {
+      console.error('Error obtaining the OAuth faucet receipt', error)
+    }
+    setLoading(false)
+  }
+
+  const handleAragonDaoAuth = async () => {
+    setLoading(true)
+
+    const tloading = toast({
+      title: t('claim.aragondao.loading_title'),
+      description: t('claim.aragondao.loading_description'),
+      status: 'loading',
+      duration: null,
+    })
+
+    try {
+      const { amount, faucetPackage } = await aragonDaoReceipt()
+      toast.close(tloading)
+      toast({
+        title: t('claim.aragondao.success_title'),
+        description: t('claim.aragondao.success_description'),
+        status: 'success',
+        duration: 6000,
+      })
+      await claimFaucetTokens(amount, faucetPackage)
+    } catch (error) {
+      console.error('Error obtaining the AragonDAO faucet receipt', error)
+      toast.close(tloading)
+      toast({
+        title: t('claim.aragondao.error_title'),
+        description: t('claim.aragondao.error_description'),
+        status: 'error',
+        duration: 6000,
+        isClosable: true,
+      })
+    }
+    setLoading(false)
+  }
+
+  const claimFaucetTokens = async (amount: string, faucetPackage: string) => {
     const tloading = toast({
       title: t('claim.loading_title'),
       description: t('claim.loading_description'),
@@ -58,9 +102,6 @@ export const Claim = () => {
     })
 
     try {
-      // get the faucet receipt
-      const { faucetPackage } = await faucetReceipt(provider, code, recipient)
-
       // claim the tokens with the SDK
       if (typeof account !== 'undefined') {
         await client.collectFaucetTokens(faucetPackage)
@@ -112,10 +153,15 @@ export const Claim = () => {
             w='full'
             isLoading={loading}
             colorScheme='primary'
-            onClick={() => handleSignIn('github')}
+            onClick={() => handleOAuthSignIn('github')}
           >
             <Icon mr={2} as={FaGithub} />
             {t('login.github')}
+          </Button>
+
+          <Button type='submit' w='full' isLoading={loading} colorScheme='blue' onClick={() => handleAragonDaoAuth()}>
+            <Icon mr={2} as={FaUsers} />
+            {t('login.aragondao')}
           </Button>
         </Flex>
       )}

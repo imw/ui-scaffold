@@ -29,7 +29,7 @@ const Faucet = () => {
               </Heading>
               <Text>
                 {account ? (
-                  <Text>
+                  <>
                     <Trans i18nKey='faucet.tokens_you_own' values={{ balance: account?.balance }} />
                     {` `}
                     <Trans
@@ -39,7 +39,7 @@ const Faucet = () => {
                       }}
                       values={{ balance: account?.balance }}
                     />
-                  </Text>
+                  </>
                 ) : (
                   <Trans i18nKey='faucet.login_first' />
                 )}

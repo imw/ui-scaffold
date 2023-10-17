@@ -91,7 +91,15 @@
     "loading_description": "Por favor espera mientras se reclaman los tokens",
     "loading_title": "Reclamando",
     "success_description": "Éxito",
-    "success_title": "Los tokens han sido reclamados correctamente"
+    "success_title": "Los tokens han sido reclamados correctamente",
+    "aragondao": {
+      "loading_title": "Aragon DAO",
+      "loading_description": "Verificando tu Aragon DAO",
+      "success_title": "Éxito",
+      "success_description": "Hemos verificado que tu dirección pertenece a una DAO de Aragon",
+      "error_title": "Verificación DAO de Aragon",
+      "error_description": "No se pudo verificar que la dirección pertenece a un DAO de Aragon"
+    }
   },
   "copy": {
     "address": "Copiar dirección",
@@ -313,7 +321,8 @@
   },
   "loading": "Cargando...",
   "login": {
-    "github": "Iniciar sesión con Github"
+    "github": "Iniciar sesión con Github",
+    "aragondao": "Miembro de una DAO de Aragon"
   },
   "menu": {
     "burger_aria_label": "menú de usuario",

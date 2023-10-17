@@ -89,7 +89,15 @@
     "loading_description": "Please wait while tokens are being claimed",
     "loading_title": "Claiming",
     "success_description": "Success",
-    "success_title": "Tokens were successfully claimed"
+    "success_title": "Tokens were successfully claimed",
+    "aragondao": {
+      "loading_title": "Aragon DAO",
+      "loading_description": "Verifying your Aragon DAO",
+      "success_title": "Success",
+      "success_description": "We've verified your address belongs to an Aragon DAO",
+      "error_title": "Aragon DAO verification",
+      "error_description": "Couldn't verify the address belongs to an Aragon DAO"
+    }
   },
   "copy": {
     "address": "Copy address",
@@ -305,7 +313,8 @@
   },
   "loading": "Loading...",
   "login": {
-    "github": "Sign in with Github"
+    "github": "Sign in with Github",
+    "aragondao": "Aragon DAO member"
   },
   "menu": {
     "burger_aria_label": "user menu",
