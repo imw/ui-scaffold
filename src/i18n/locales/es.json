@@ -50,7 +50,7 @@
     "results": {
       "date_format": "d 'de' MMMM 'de' y 'a' 'las' H:mm",
       "secret_until_the_end": "Los resultados provisionales estarán accesibles cuando el proceso finalice.",
-      "title": "\"{{ title }}\"",
+      "title": "{{ title }}",
       "votes": "Votos: {{ votes }} ({{ percent }})"
     },
     "schedule": "Votación desde el {{ begin }} hasta {{ end }}",

@@ -50,7 +50,7 @@
     "results": {
       "date_format": "PPpp",
       "secret_until_the_end": "Els resultats provisionals seran accessibles quan el procés finalitzi.",
-      "title": "\"{{ title }}\"",
+      "title": "{{ title }}",
       "votes": "Vots: {{ votes }} ({{ percent }})"
     },
     "schedule": "Votació del {{ begin }} al {{ end }}",
