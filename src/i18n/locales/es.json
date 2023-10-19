@@ -383,7 +383,7 @@
       "relative": "{{ date, relative(past: hace %time; future: en %time) }}",
       "starts": "Empieza"
     },
-    "erc_footer": "<strong>Esquerra Republicana</strong> utiliza la plataforma de software libre Vocdoni basada en tecnología blockchain para gestionar y registrar las votaciones de manera anónima, segura y transparente. Para obtener más información sobre la plataforma, puedes consultar el siguiente enlace: <customLink>vocdoni.io</customLink>.",
+    "erc_footer": "<strong>Esquerra Republicana</strong> utiliza la plataforma de software libre Vocdoni basada en tecnología blockchain para gestionar y registrar las votaciones de manera segura y transparente. Para obtener más información sobre la plataforma, puedes consultar el siguiente enlace: <customLink>vocdoni.io</customLink>.",
     "is_anonymous": {
       "description": "Identidad 100% anonimizada",
       "title": "Anónimo"
