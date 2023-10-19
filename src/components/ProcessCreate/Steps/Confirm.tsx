@@ -46,7 +46,7 @@ import { Web3Address } from '../StepForm/CensusWeb3'
 import { Option } from '../StepForm/Questions'
 import Wrapper from './Wrapper'
 import { StepsFormValues, useProcessCreationSteps } from './use-steps'
-import imageHeader from '/assets/erc.png'
+import imageHeader from '/assets/erc-logo.png'
 
 export const Confirm = () => {
   const { env, client, account } = useClient()
