@@ -1,10 +1,24 @@
+import { useToast } from '@chakra-ui/react'
+import { useEffect } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAccount } from 'wagmi'
 
 const ProtectedRoutes = () => {
-  const { isConnected } = useAccount()
+  const { isConnected, address } = useAccount()
+  const toast = useToast()
 
-  return isConnected ? <Outlet /> : <Navigate to='/' replace={true} />
+  const canAccess = isConnected && address === import.meta.env.MAIN_ORG
+
+  useEffect(() => {
+    if (canAccess) return
+
+    toast({
+      title: 'No tens permisos per accedir aquí',
+      status: 'error',
+    })
+  }, [canAccess])
+
+  return canAccess ? <Outlet /> : <Navigate to='/' replace={true} />
 }
 
 export default ProtectedRoutes
