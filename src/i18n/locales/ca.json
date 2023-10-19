@@ -175,7 +175,7 @@
         "title": "Opcions"
       },
       "calendar": {
-        "date_format": "PPPPpppp",
+        "date_format": "PPPPp",
         "end_date": "Data de finalització",
         "end_date_description": "Aquesta votació començarà el {{ date.begin, format }} i finalitzarà el {{ date.end, format }}, amb una durada d'aproximadament {{ date, duration }}",
         "end_date_title_helper": "Definir la data i l'hora exactes de la conclusió.",

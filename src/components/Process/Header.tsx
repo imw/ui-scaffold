@@ -41,7 +41,7 @@ const ProcessHeader = () => {
             <Box>
               <ElectionStatusBadge />
             </Box>
-            <ElectionSchedule textAlign='left' color='process.info_title' />
+            <ElectionSchedule textAlign='left' color='process.info_title' format='dd/MM/yyyy HH:mm' />
           </Flex>
           <Flex flexDirection='column'>
             <ReadMoreMarkdownWrapper from='rgba(250, 250, 250, 0)' to='rgba(250, 250, 250, 1)'>

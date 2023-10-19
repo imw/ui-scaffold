@@ -39,7 +39,7 @@ export const translations = (t: TFunction<string, string>) => ({
     title: t('cc.results.title').toString(),
     votes: t('cc.results.votes').toString(),
   },
-  schedule: t('cc.schedule').toString(),
+  schedule: t('cc.schedule', { format: 'PPPPp' }).toString(),
   spreadsheet: {
     access_button: t('cc.spreadsheet.access_button').toString(),
     close: t('cc.spreadsheet.close').toString(),
