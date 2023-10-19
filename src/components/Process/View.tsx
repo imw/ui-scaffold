@@ -50,9 +50,16 @@ export const ProcessView = () => {
   return (
     <>
       <Box>
-        <Flex justifyContent='center' mb={{ base: 10, md: 20 }} mt={{ base: 6, md: 10 }}>
-          <Img src={logoBrand} maxW={{ base: '300px', md: '400px', lg: '500px' }} />
-        </Flex>
+        <Box
+          mb={10}
+          mt={6}
+          px={{
+            base: 2,
+            sm: 4,
+          }}
+        >
+          <Img src={logoBrand} maxW={{ base: '300px', md: '400px' }} />
+        </Box>
         <Header />
         <Flex
           direction={{ base: 'column', md: 'row' }}
