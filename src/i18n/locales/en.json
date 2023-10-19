@@ -48,7 +48,7 @@
     "results": {
       "date_format": "PPpp",
       "secret_until_the_end": "Provisional results will be accessible when the process concludes.",
-      "title": "Results for \"{{ title }}\"",
+      "title": "\"{{ title }}\"",
       "votes": "Votes: {{ votes }} ({{ percent }})"
     },
     "schedule": "Voting from {{ begin }} to {{ end }}",
