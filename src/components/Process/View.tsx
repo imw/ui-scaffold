@@ -48,7 +48,7 @@ export const ProcessView = () => {
   }, [election])
 
   return (
-    <>
+    <div>
       <Box>
         <Box
           mb={10}
@@ -138,7 +138,7 @@ export const ProcessView = () => {
         />
       </Text>
       <SuccessVoteModal />
-    </>
+    </div>
   )
 }
 
