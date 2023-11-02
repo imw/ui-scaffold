@@ -27,27 +27,16 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Build CRA app dev
+      - name: Build app
         run: yarn build
         env:
-          BASE_URL: '/ui-scaffold/dev/'
-          VOCDONI_ENVIRONMENT: 'dev'
-          BUILD_PATH: 'build/dev'
-
-      - name: Build CRA app stg
-        run: yarn build
-        env:
-          BASE_URL: '/ui-scaffold/stg/'
-          VOCDONI_ENVIRONMENT: 'stg'
-          BUILD_PATH: 'build/stg'
-
-      - name: Create redirect index
-        run: echo '<meta http-equiv="refresh" content="0;url=https://vocdoni.github.io/ui-scaffold/stg" />' > build/index.html
+          BASE_URL: '/ui-scaffold/'
+          VOCDONI_ENVIRONMENT: 'prod'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'build'
+          path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
