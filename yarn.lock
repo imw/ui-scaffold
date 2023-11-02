@@ -2604,36 +2604,7 @@
   dependencies:
     "@vocdoni/sdk" "^0.3.1"
 
-"@vocdoni/sdk@^0.3.1":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@vocdoni/sdk/-/sdk-0.3.2.tgz#c2017b446cf9e95571ebf2f1e87c267ef9b17bdc"
-  integrity sha512-9PAGTLrDY1abHivi0qYq+HgSS3FZHPZgv1R5icIT9Ct3D7kxj9gvkQNS3zgEQu56WiH0f3cHW6XcsmlcUn6RTQ==
-  dependencies:
-    "@ethersproject/abstract-signer" "^5.7.0"
-    "@ethersproject/address" "^5.7.0"
-    "@ethersproject/bignumber" "^5.7.0"
-    "@ethersproject/bytes" "^5.7.0"
-    "@ethersproject/keccak256" "^5.7.0"
-    "@ethersproject/providers" "^5.7.1"
-    "@ethersproject/sha2" "^5.7.0"
-    "@ethersproject/signing-key" "^5.7.0"
-    "@ethersproject/strings" "^5.7.0"
-    "@ethersproject/units" "^5.7.0"
-    "@ethersproject/wallet" "^5.7.0"
-    "@size-limit/file" "^8.2.4"
-    "@vocdoni/proto" "1.15.3"
-    axios "0.27.2"
-    blake2b "^2.1.4"
-    iso-language-codes "^1.1.0"
-    readable-stream "^4.4.2"
-    tiny-invariant "^1.3.1"
-    tweetnacl "^1.0.3"
-    wasmbuilder "^0.0.16"
-    wasmcurves "0.2.1"
-    web-worker "^1.2.0"
-    yup "^0.32.11"
-
-"@vocdoni/sdk@^0.4.1":
+"@vocdoni/sdk@^0.3.1", "@vocdoni/sdk@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@vocdoni/sdk/-/sdk-0.4.1.tgz#f97d70bfe831da73f3966f1181aa838a5838d644"
   integrity sha512-6rfwMgJDqkFg2xmpGaKrcabZHdo55RvnQib/wh5X2s7aECEEl4MX8srijijSU6pLw+IIQWYfa63XBa2jKqTkGQ==
