@@ -1,13 +1,7 @@
 import { WarningIcon } from '@chakra-ui/icons'
 import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import { useReadMoreMarkdown } from '@components/Layout/use-read-more'
-import {
-  ElectionActions,
-  ElectionDescription,
-  ElectionSchedule,
-  ElectionStatusBadge,
-  ElectionTitle,
-} from '@vocdoni/chakra-components'
+import { ElectionActions, ElectionDescription, ElectionStatusBadge, ElectionTitle } from '@vocdoni/chakra-components'
 import { useClient, useElection } from '@vocdoni/react-providers'
 import { ElectionStatus } from '@vocdoni/sdk'
 import { useTranslation } from 'react-i18next'
@@ -41,7 +35,6 @@ const ProcessHeader = () => {
             <Box>
               <ElectionStatusBadge />
             </Box>
-            <ElectionSchedule textAlign='left' color='process.info_title' format='dd/MM/yyyy HH:mm' />
           </Flex>
           <Flex flexDirection='column'>
             <ReadMoreMarkdownWrapper from='rgba(250, 250, 250, 0)' to='rgba(250, 250, 250, 1)'>
