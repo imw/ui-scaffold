@@ -30,7 +30,6 @@ jobs:
       - name: Build app
         run: yarn build
         env:
-          BASE_URL: '/ui-scaffold/'
           VOCDONI_ENVIRONMENT: 'prod'
 
       - name: Upload artifact
