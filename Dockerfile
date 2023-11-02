@@ -1,14 +1,16 @@
 FROM node:18 as builder
-ARG VOCDONI_ENVIRONMENT
+
+ARG VOCDONI_ENVIRONMENT=prod
+ENV VOCDONI_ENVIRONMENT=$VOCDONI_ENVIRONMENT
+
 WORKDIR /app
-COPY package.json .
-COPY yarn.lock .
-RUN yarn install
+
+COPY package.json yarn.lock ./
+
+RUN yarn
+
 COPY . .
+
 RUN yarn build
 
-FROM nginx
-WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
-COPY --from=builder /app/dist .
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+VOLUME [ "/app/dist" ]
