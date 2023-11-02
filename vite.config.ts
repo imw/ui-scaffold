@@ -6,7 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 let vocdoniEnvironment = process.env.VOCDONI_ENVIRONMENT
 if (!vocdoniEnvironment) {
-  vocdoniEnvironment = 'stg'
+  vocdoniEnvironment = 'prod'
 }
 
 const outDir = process.env.BUILD_PATH
