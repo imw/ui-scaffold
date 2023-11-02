@@ -2577,12 +2577,12 @@
     "@babel/plugin-transform-react-jsx-source" "^7.22.5"
     react-refresh "^0.14.0"
 
-"@vocdoni/chakra-components@^0.5.17":
-  version "0.5.17"
-  resolved "https://registry.yarnpkg.com/@vocdoni/chakra-components/-/chakra-components-0.5.17.tgz#3454dae3903bff3861b6ce13e1a4108cb09bca81"
-  integrity sha512-0yJcCFqL/jFmYznTT3fGd5IM7xEJZfJH1sxKHoYx3qUCFvGq0FwoY5C9O/HlbL5oIVXAxd1sKZG1PRemgR6c8Q==
+"@vocdoni/chakra-components@^0.5.18":
+  version "0.5.18"
+  resolved "https://registry.yarnpkg.com/@vocdoni/chakra-components/-/chakra-components-0.5.18.tgz#5893e83ff170797d7aa11272c173533b12319c1d"
+  integrity sha512-bq5KxAsIOUz+SoM37AtuUjrfeijbpdcQTDTLI6BIm23atDQGBxfVYkCONE8r0Gcndq5cEhSEAY8NTM+u/oWdVA==
   dependencies:
-    "@vocdoni/react-providers" "0.1.12"
+    "@vocdoni/react-providers" "0.1.13"
 
 "@vocdoni/proto@1.15.3":
   version "1.15.3"
@@ -2597,17 +2597,46 @@
   resolved "https://registry.yarnpkg.com/@vocdoni/rainbowkit-wallets/-/rainbowkit-wallets-0.1.8.tgz#a35559ab5e079ce0acc8a2e02d01abcbed73442a"
   integrity sha512-kaAXAMO/ht0z2Z2wZJjyGQtETB21k9nbEPu89ElcHyzgWDCwZuoRi525qdhNqRKx4WWKJP/Zhun/0jT3eq7PVg==
 
-"@vocdoni/react-providers@0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@vocdoni/react-providers/-/react-providers-0.1.12.tgz#f48f37975ca1f47aef1364954b5f8965764118ab"
-  integrity sha512-0qsrNvt7ikOUDSzp/Zp4SiJQuO8m63OD8UTUz/YzO7aC7R3N7dNLs0k90+2XL8XuJV9eaPciTzVC+D/WyLopgQ==
+"@vocdoni/react-providers@0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@vocdoni/react-providers/-/react-providers-0.1.13.tgz#d6789272107af76f1481745a98c23bebb45f4122"
+  integrity sha512-UsKuspv5ZF9MX6cNIEGzOVUMzV6Yk+6z52yqj6qvXwXAQ9XYi6pehP53d/VSK/NWr7jBRZvgEVtFhSRX83F8HA==
   dependencies:
     "@vocdoni/sdk" "^0.3.1"
 
-"@vocdoni/sdk@^0.3.1", "@vocdoni/sdk@^0.3.2":
+"@vocdoni/sdk@^0.3.1":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@vocdoni/sdk/-/sdk-0.3.2.tgz#c2017b446cf9e95571ebf2f1e87c267ef9b17bdc"
   integrity sha512-9PAGTLrDY1abHivi0qYq+HgSS3FZHPZgv1R5icIT9Ct3D7kxj9gvkQNS3zgEQu56WiH0f3cHW6XcsmlcUn6RTQ==
+  dependencies:
+    "@ethersproject/abstract-signer" "^5.7.0"
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/keccak256" "^5.7.0"
+    "@ethersproject/providers" "^5.7.1"
+    "@ethersproject/sha2" "^5.7.0"
+    "@ethersproject/signing-key" "^5.7.0"
+    "@ethersproject/strings" "^5.7.0"
+    "@ethersproject/units" "^5.7.0"
+    "@ethersproject/wallet" "^5.7.0"
+    "@size-limit/file" "^8.2.4"
+    "@vocdoni/proto" "1.15.3"
+    axios "0.27.2"
+    blake2b "^2.1.4"
+    iso-language-codes "^1.1.0"
+    readable-stream "^4.4.2"
+    tiny-invariant "^1.3.1"
+    tweetnacl "^1.0.3"
+    wasmbuilder "^0.0.16"
+    wasmcurves "0.2.1"
+    web-worker "^1.2.0"
+    yup "^0.32.11"
+
+"@vocdoni/sdk@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@vocdoni/sdk/-/sdk-0.4.1.tgz#f97d70bfe831da73f3966f1181aa838a5838d644"
+  integrity sha512-6rfwMgJDqkFg2xmpGaKrcabZHdo55RvnQib/wh5X2s7aECEEl4MX8srijijSU6pLw+IIQWYfa63XBa2jKqTkGQ==
   dependencies:
     "@ethersproject/abstract-signer" "^5.7.0"
     "@ethersproject/address" "^5.7.0"
