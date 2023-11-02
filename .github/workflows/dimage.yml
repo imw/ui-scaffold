@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: vocdoni/ui-scaffold:erc
+          images: vocdoni/ui-scaffold
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
