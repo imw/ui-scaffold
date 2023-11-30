@@ -430,7 +430,7 @@
     "date": {
       "ended": "Ended",
       "ends": "Ends",
-      "relative": "{{ date, relative(past: %time ago; futuree: in %time) }}",
+      "relative": "{{ date, relative(past: %time ago; future: in %time) }}",
       "starts": "Starts"
     },
     "is_anonymous": {
