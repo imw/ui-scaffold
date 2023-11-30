@@ -1,4 +1,4 @@
-import { ChevronDownIcon, ChevronUpIcon, CopyIcon } from '@chakra-ui/icons'
+import { CopyIcon } from '@chakra-ui/icons'
 import {
   Box,
   Button,
@@ -14,7 +14,6 @@ import {
 } from '@chakra-ui/react'
 import { Balance, HR } from '@vocdoni/chakra-components'
 import { useClient } from '@vocdoni/react-providers'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaWallet } from 'react-icons/fa'
 import { HiShoppingCart } from 'react-icons/hi'
@@ -23,15 +22,12 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import { useDisconnect } from 'wagmi'
 import { useOrganizationModal } from '~components/Organization/OrganizationModalProvider'
 import { addressTextOverflow } from '~constants'
-import LanguagesList from './LanguagesList'
 
 const MenuDropdown = () => {
   const { t } = useTranslation()
   const { disconnect } = useDisconnect()
   const { account, clear } = useClient()
   const { onCopy } = useClipboard(account?.address as string)
-
-  const [isOpenMenuLanguages, setIsOpenMenuLanguages] = useState(false)
 
   const { onOpen } = useOrganizationModal()
 
@@ -124,20 +120,6 @@ const MenuDropdown = () => {
         </>
       )}
 
-      <MenuItem
-        closeOnSelect={false}
-        onClick={() => setIsOpenMenuLanguages((prev) => !prev)}
-        display='flex'
-        flexDirection='column'
-        px={0}
-        pb={0}
-      >
-        <Box as='span' px={3} display='flex' w='full' pb={2}>
-          <Text>{t('menu.languages')}</Text>
-          {isOpenMenuLanguages ? <ChevronUpIcon mt='5px' /> : <ChevronDownIcon mt='5px' />}
-        </Box>
-      </MenuItem>
-      {isOpenMenuLanguages && <LanguagesList closeOnSelect={false} />}
       <MenuItem>
         <Link
           href='https://developer.vocdoni.io/'
